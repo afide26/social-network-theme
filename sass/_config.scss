@@ -13,7 +13,7 @@ sans-serif;
 
 // Set text color based on background
 @function set-text-color($color) {
-  @if(lightness($color) > 50) {
+  @if(lightness($color) > 60) {
     @return #333333;
   }
 
@@ -27,4 +27,30 @@ sans-serif;
 @mixin set-background($color) {
   background-color: $color;
   color: set-text-color($color);
+}
+
+//Margin & Padding
+$spaceamounts:(1, 2, 3, 4, 5);
+
+@each $space in $spaceamounts {
+
+  // All around Margin
+  .m-#{$space} {
+    margin: #{$space}rem;
+  }
+
+  // Vertical Margin
+  .my-#{$space} {
+    margin: #{$space}rem 0;
+  }
+
+  // All around Padding
+  .p-#{$space} {
+    padding: #{$space}rem;
+  }
+
+  // Vertical Padding
+  .py-#{$space} {
+    padding: #{$space}rem 0;
+  }
 }
