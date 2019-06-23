@@ -1,0 +1,119 @@
+//Text Styles
+
+@mixin lineBottom() {
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.x-large {
+  font-size: 4rem;
+  @include lineBottom()
+}
+
+.large {
+  font-size: 3rem;
+  @include lineBottom()
+}
+
+.lead {
+  font-size: 1.25rem;
+  @include lineBottom()
+}
+
+// Backgrounds
+.bg {
+  &-primary {
+    @include set-background($primary-color);
+  }
+
+  &-light {
+    @include set-background($light-color);
+    border: 1px solid #ccc;
+  }
+
+  &-dark {
+    @include set-background($dark-color);
+  }
+
+  &-success {
+    @include set-background($success-color);
+  }
+
+  &-danger {
+    @include set-background($danger-color);
+  }
+
+  &-white {
+    @include set-background(#fff);
+    border: 1px solid #ccc;
+  }
+}
+
+// Buttons
+.btn {
+  display: inline-block;
+  background: $light-color;
+  color: #333;
+  padding: 0.4rem 1.3rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-right: 0.5rem;
+  outline: none;
+  transition: all 0.3s ease-in;
+
+  &.btn-primary {
+    @include set-background($primary-color);
+    color: #fff;
+
+    &:hover {
+      background: lighten($primary-color, 15%);
+    }
+  }
+
+  &.btn-success {
+    @include set-background($success-color);
+    color: #fff;
+
+    &:hover {
+      background: lighten($success-color, 15%);
+    }
+  }
+
+  &.btn-danger {
+    @include set-background($danger-color);
+    color: #fff;
+
+    &:hover {
+      background: lighten($danger-color, 15%);
+    }
+  }
+
+  &.btn-dark {
+    @include set-background($dark-color);
+    color: #fff;
+
+    &:hover {
+      background: lighten($dark-color, 15%);
+    }
+  }
+
+  &.btn-light {
+    @include set-background($light-color);
+    color: #fff;
+
+    &:hover {
+      background: lighten($light-color, 15%);
+    }
+  }
+}
+
+.dark-overlay {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
